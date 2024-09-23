@@ -1,9 +1,6 @@
 from django.shortcuts import render
 
-# Add the following import
-from django.http import HttpResponse
 
-# Add the Cat class & list and view function below the imports
 class Goal:  # Note that parens are optional if not inheriting from another class
   def __init__(self, name, category, creature_type, target_date, description):
     self.name = name
@@ -19,9 +16,8 @@ goals = [
     Goal("Launch a Productivity App", "Productivity", "Beaver", "2024-09-30", "Complete and launch a productivity app to help users manage their tasks efficiently.")
 ]
 
-# Define the home view
 def home(request):
-  return HttpResponse('<h1>Hello Trailkeepers</h1>')
+  return render(request, 'home.html')
 
 def about(request):
   return render(request, 'about.html')
