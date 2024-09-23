@@ -78,9 +78,7 @@ header {
     z-index: 2; /* Ensure the text is above the overlay */
     position: relative; 
     width: 100%; /* Ensure the header stays within the viewport */
-    /* background: var(--nav-bg-ff); rgba(104, 197, 248, .9) */
-    /* border-bottom: var(--borders); */
-    /* background-color: #f7efcf; */
+
   }  
   
   nav {
