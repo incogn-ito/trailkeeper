@@ -160,7 +160,7 @@ header {
 .page-header {
     display: flex;
     align-items: center;
-    margin: 80px 40px 0 20px;
+    margin: 0 40px 0 20px;
   }
   
   .btn {
@@ -241,7 +241,6 @@ header {
       display: flex;
       justify-content: center;
       margin-left: auto;
-
     }
   
     nav ul {
@@ -280,6 +279,7 @@ header {
         background: var(--nav-bg);
         /* -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px); */
+        
       }
     }
   }
