@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/goals/goal-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Goal List</h1>
+  <img src="{% static 'images/cool-goal.svg' %}" alt="A cool goal" />
+  <img src="{% static 'images/happy-goal.svg' %}" alt="A happy goal" />
+  <img src="{% static 'images/teacup-goal.svg' %}" alt="A goal in a teacup" />
+  <img src="{% static 'images/goal-in-box.svg' %}" alt="A goal in a box" />
+</section>
+
+<section class="card-container">
+  {% for goal in goals %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img 
+            src="{% static 'images/logo-typeface.png' %}" 
+            alt="A skater boy goal"
+          >
+        </div>
+        <h2 class="card-title">{{ goal.name }}</h2>
+        {% if goal.target_date > 0 %}
+          <p>A {{ goal.category }} goal to reach by {{ goal.target_date }} </p>
+        {% else %}
+          <p>A {{ goal.category }} goal.</p>
+        {% endif %}
+        <p><small>{{ goal.description }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
