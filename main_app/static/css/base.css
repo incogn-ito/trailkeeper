@@ -117,6 +117,9 @@ header {
   
   h2 {
     font-size: var(--font-xl);
+    z-index: 2; /* Ensure the text is above the overlay */
+    position: relative; 
+    margin-left: 20px;
   }
   
   nav a {
@@ -124,6 +127,7 @@ header {
     color: var(--text-color);
     font-weight: 600;
     font-size: 16px;
+    margin: 5px;
   }
   
   nav a:hover {
@@ -161,6 +165,8 @@ header {
     display: flex;
     align-items: center;
     margin: 0 40px 0 20px;
+    z-index: 2; /* Ensure the text is above the overlay */
+    position: relative; 
   }
   
   .btn {
@@ -174,7 +180,10 @@ header {
     font-weight: 600;
     cursor: pointer;
     font-family: inherit;
-    margin-right: 10px;
+    margin-right: 20px 10px;
+    z-index: 2; /* Ensure the text is above the overlay */
+    position: relative; 
+    margin: 10px 10px 0 0;
   }
   
   .btn:hover {
@@ -189,6 +198,7 @@ header {
   .secondary {
     color: var(--secondary);
     border-color: var(--secondary);
+    margin: 20px 10px 0 20px;
   }
   
   .warn {
@@ -204,6 +214,7 @@ header {
   .page-header h1 {
     font-size: var(--font-xxl);
     margin: 5% 0 0 0;
+    
   }
   
   .page-header img {

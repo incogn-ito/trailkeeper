@@ -1,11 +1,12 @@
-.form-container {
+
+  .form-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     z-index: 2; /* Ensure the text is above the overlay */
     position: relative; 
   }
-  
+
   table {
     padding: 0 40px;
     width: 100%;
@@ -36,6 +37,7 @@
   }
   
   .btn {
+    margin: 20px 0 0 20px;
     align-self: flex-end;
     margin-right: 40px;
   }
