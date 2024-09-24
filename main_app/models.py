@@ -1,8 +1,9 @@
 from django.db import models
 # from django.contrib.auth.models import User
 from django.urls import reverse
+from datetime import date
 
-# Define the possible choices for the category and creature type fields
+
 CATEGORY_CHOICES = (
     ('Financial', 'Financial'),
     ('Personal Development', 'Personal Development'),
@@ -16,6 +17,18 @@ CREATURE_CHOICES = (
     ('Fox', 'Fox'),
     ('Beaver', 'Beaver'),
 )
+
+ACTION_CHOICES = (
+    ('Research', 'Research'),
+    ('Plan', 'Plan'),
+    ('Start', 'Start'),
+    ('Execute', 'Execute'),
+    ('Review', 'Review'),
+    ('Adjust', 'Adjust'),
+    ('Collaborate', 'Collaborate'),
+    ('Reflect', 'Reflect'),
+)
+
 
 # Define default images for each category
 # DEFAULT_IMAGES = {
@@ -51,3 +64,31 @@ class Goal(models.Model):
 
     # def __str__(self):
     #     return f"{self.name} - {self.get_creature_type_display()}"
+
+from django.db import models
+from datetime import date
+
+# Define categories of actions that can be taken as steps
+ACTION_CHOICES = (
+    ('Research', 'Research'),
+    ('Plan', 'Plan'),
+    ('Start', 'Start'),
+    ('Execute', 'Execute'),
+    ('Review', 'Review'),
+    ('Adjust', 'Adjust'),
+    ('Collaborate', 'Collaborate'),
+    ('Reflect', 'Reflect'),
+)
+
+class Step(models.Model):
+    date = models.DateField('Step Date', default=date.today)
+    description = models.CharField(max_length=255, choices=ACTION_CHOICES, blank=True)
+    custom_description = models.CharField(max_length=255, blank=True, null=True)  # Optional custom field
+    goal = models.ForeignKey('Goal', on_delete=models.CASCADE)
+
+    def __str__(self):
+        # Show either predefined action or custom description
+        return self.custom_description or self.get_description_display()
+    
+    class Meta:
+        ordering = ['-date']

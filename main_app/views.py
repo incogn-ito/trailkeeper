@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Goal
+# from .forms import StepForm
 
 
 
@@ -32,6 +33,14 @@ def goal_index(request):
 def goal_detail(request, goal_id):
     goal = Goal.objects.get(id=goal_id)
     return render(request, 'goals/detail.html', { 'goal': goal })
+
+# def add_step(request, goal_id):
+#   form = StepForm(request.POST)
+#   if form.is_valid():
+#     new_step = form.save(commit=False)
+#     new_step.goal = goal
+#     new_step.save()
+#     return redirect('goal-detail', goal_id=goal.id)
 
 class GoalCreate(CreateView):
   model = Goal
