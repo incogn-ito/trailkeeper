@@ -32,9 +32,9 @@
   <div class="goal-details">
     <h1>{{ goal.name }}</h1>
     {% if goal.target_date %}
-      <h2>A {{ goal.category }} goal to be completed {{ goal.target_date }}.</h2>
+      <h2>{{ goal.category }} goal to complete by {{ goal.target_date }}.</h2>
     {% else %}
-      <h2>A {{ goal.category }} goal.</h2>
+      <h2>An ongoing {{ goal.category }} goal.</h2>
     {% endif %}
     <p>{{ goal.description }}</p>
     {% comment %} <div class="goal-actions">

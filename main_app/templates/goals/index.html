@@ -22,7 +22,7 @@
 <section class="card-container">
   {% for goal in goals %}
     <div class="card">
-      <a href="/goals/{{ goal.id }}">
+      <a href="{% url 'goal-detail' goal.id %}">
       <div class="card-content">
         <div class="card-img-container">
           <img 

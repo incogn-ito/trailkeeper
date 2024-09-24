@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Goal
 
 
@@ -30,3 +31,8 @@ def goal_index(request):
 def goal_detail(request, goal_id):
     goal = Goal.objects.get(id=goal_id)
     return render(request, 'goals/detail.html', { 'goal': goal })
+
+class GoalCreate(CreateView):
+  model = Goal
+  fields = ['name', 'category', 'target_date', 'description']
+  success_url = '/goals/'
