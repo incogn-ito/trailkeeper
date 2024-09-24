@@ -26,3 +26,7 @@ def about(request):
 def goal_index(request):
   goals = Goal.objects.all()
   return render(request, 'goals/index.html', { 'goals': goals })
+
+def goal_detail(request, goal_id):
+    goal = Goal.objects.get(id=goal_id)
+    return render(request, 'goals/detail.html', { 'goal': goal })

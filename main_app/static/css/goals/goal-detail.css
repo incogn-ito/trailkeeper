@@ -1,0 +1,289 @@
+/* .goal-container {
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+} */
+
+/* .goal-img { */
+  /* width: 75%; */
+  /* max-width: 350px; */
+  /* z-index: 2; Ensure the text is above the overlay */
+  /* position: relative; 
+} */
+
+.goal-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 35px 30px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative;
+  text-align: center; /* Center text for smaller screens */
+}
+
+.goal-img img {
+  flex: 1;
+  width: 100%; /* Full width of its container */
+  max-width: 350px; /* Set maximum width */
+  margin: 0 auto 25px; /* Center the image and add bottom margin */
+}
+
+.goal-details {
+  flex: 2; /* Take up 2 portions of the available space */
+  width: 100%; /* Full width for smaller screens */
+  padding-left: 0; /* Remove padding for smaller screens */
+  max-width: 600px; /* Set a maximum width for better alignment */
+  margin: 0 auto; /* Center goal-details container */
+}
+
+.goal-actions {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .goal-container {
+    flex-direction: row; /* Arrange items side by side on larger screens */
+    align-items: flex-start; /* Align items to the top for better structure */
+    justify-content: center; /* Still center items horizontally */
+    text-align: left; /* Align text to the left for better readability */
+  }
+
+  .goal-img img {
+    width: 80%; /* Slightly reduce image width */
+    max-width: 300px; /* Adjust the maximum width */
+    margin-right: 25px; /* Add right margin between image and details */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  .goal-details {
+    width: 70%; /* Take up more width */
+    padding-left: 20px; /* Add left padding for spacing */
+    margin: 0; /* Remove margin for better alignment */
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .goal-container {
+    padding: 0 40px;
+  }
+
+  .goal-img img {
+    width: 100%; /* Adjust width for larger screens */
+    max-width: 400px; /* Increase max width for larger screens */
+  }
+
+  .goal-details {
+    width: 60%; /* Adjust width for larger screens */
+  }
+}
+
+.usr-img {
+  width: 100%;
+  border-radius: var(--card-border-radius);
+}
+
+/* .goal-details {
+  width: 98%;
+  z-index: 2; 
+  position: relative; 
+}
+
+.goal-actions {
+  margin-top: 20px;
+  z-index: 2; 
+  position: relative; 
+} */
+
+.steps-milestones-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.subsection-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.subsection-content {
+  margin: 0 8px;
+}
+
+.milestone-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.color-block {
+  opacity: 0.8;
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
+.unfed,
+.fed,
+.no-milestones,
+.all-milestones {
+  margin: 0;
+  font-weight: bold;
+}
+
+.unfed,
+.no-milestones {
+  color: var(--danger);
+}
+
+.fed,
+.all-milestones {
+  color: var(--submit);
+}
+
+.goal-details h1 {
+  font-size: var(--font-xxl);
+  margin: 15px 0 3px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
+}
+
+.goal-details h2 {
+  font-size: var(--font-xl);
+  margin: 0 0 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
+}
+
+.goal-details h3 {
+  margin: 20px 0 10px;
+  font-size: var(--font-l);
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
+}
+
+.goal-details p {
+  font-size: var(--font-reg);
+  margin: 5px 0;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
+}
+
+.steps-milestones-container > section {
+  width: 80%;
+  min-width: 360px;
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  padding: 10px;
+  box-shadow: var(--card-box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.subsection-title img {
+  height: 42px;
+  margin-left: 8px;
+}
+
+.subsection-title img:first-of-type {
+  margin-left: 16px;
+}
+
+.steps h2,
+.milestones h2 {
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+.steps h3,
+.milestones h3 {
+  font-size: var(--font-xl);
+  margin: 10px 0;
+}
+
+.subsection-content p,
+.subsection-content input,
+.subsection-content select {
+  font-size: var(--font-l);
+}
+
+.subsection-content input,
+.subsection-content select {
+  margin-left: 5px;
+  padding: 3px;
+}
+
+.steps table {
+  width: calc(100% - 16px);
+  text-align: left;
+  border-collapse: collapse;
+  margin: 0 8px;
+}
+
+.steps td {
+  padding: 8px 5px;
+  font-size: var(--font-reg);
+}
+
+.steps th {
+  font-size: var(--font-l);
+  padding: 5px 5px 0;
+  border-bottom: rgb(36, 116, 248) solid 2px;
+}
+
+.steps tr:nth-child(even) {
+  background-color: #f3f3fd;
+}
+
+.milestone-container p {
+  margin: 12px 0;
+}
+
+.milestone-container a {
+  text-decoration: none;
+  color: #111;
+}
+
+.milestone-container .btn {
+  padding: 3px 10px;
+  margin-left: 10px;
+}
+
+#file-input {
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+}
+
+#file-name {
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .steps-milestones-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .steps-milestones-container > section {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .steps-milestones-container {
+    padding: 0 40px;
+  }
+}

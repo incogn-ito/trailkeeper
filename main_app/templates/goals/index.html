@@ -22,21 +22,24 @@
 <section class="card-container">
   {% for goal in goals %}
     <div class="card">
+      <a href="/goals/{{ goal.id }}">
       <div class="card-content">
         <div class="card-img-container">
           <img 
             src="{% static 'images/logo-typeface.png' %}" 
-            alt="A skater boy goal"
+            alt="Trail Keeper logo"
           >
         </div>
         <h2 class="card-title">{{ goal.name }}</h2>
-        {% if goal.target_date > 0 %}
-          <p>A {{ goal.category }} goal to reach by {{ goal.target_date }} </p>
-        {% else %}
+        {% if goal.target_date %}
           <p>A {{ goal.category }} goal.</p>
+          <p>To complete by: {{ goal.target_date }} </p>
+        {% else %}
+          <p>An ongoing {{ goal.category }} goal.</p>
         {% endif %}
-        <p><small>{{ goal.description }}</small></p>
-      </div>
+        {% comment %} <p><small>{{ goal.description }}</small></p> {% endcomment %}
+        </div>
+      </a>  
     </div>
   {% endfor %}
 </section>
