@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Goal
+
 
 
 # class Goal:  # Note that parens are optional if not inheriting from another class
@@ -35,4 +36,12 @@ def goal_detail(request, goal_id):
 class GoalCreate(CreateView):
   model = Goal
   fields = ['name', 'category', 'target_date', 'description']
+  success_url = '/goals/'
+
+class GoalUpdate(UpdateView):
+  model = Goal
+  fields = ['name', 'category', 'target_date', 'description']
+
+class GoalDelete(DeleteView):
+  model = Goal
   success_url = '/goals/'

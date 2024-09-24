@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Define the possible choices for the category and creature type fields
 CATEGORY_CHOICES = (
@@ -35,6 +36,10 @@ class Goal(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse('goal-detail', kwargs={'goal_id': self.id})
+
     # Here is where you specify the upload_to argument
     # image = models.ImageField(upload_to='goal_images/', blank=True, null=True)
 
