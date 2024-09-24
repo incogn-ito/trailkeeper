@@ -16,7 +16,6 @@
   type="text/css" 
   href="{% static 'css/goals/goal-detail.css' %}"
 />
-{% comment %} <script defer src="{% static 'js/goal-detail.js' %}"></script> {% endcomment %}
 {% endblock %}
 
 {% block content %}
@@ -27,7 +26,6 @@
     src="{% static 'images/logo-typeface.png' %}" 
     alt="Trail Keeper logo"
     >
-    {% comment %} <img src="{% static goal.image_url %}" alt="{{ goal.name }}"> {% endcomment %}
   </div>
   <div class="goal-details">
     <h1>{{ goal.name }}</h1>
@@ -43,6 +41,46 @@
     </div> 
   </div>  
 </section>
+
+<div class="step-milestone-container">
+  <section class="steps">
+    <div class="subsection-title">
+      <h2>Steps</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Progress</th></tr>
+      </thead>
+      <tbody>
+        {% for step in goal.step_set.all %}
+          <tr>
+            <td>{{ step.date }}</td>
+            <td>{% if step.custom_description %}{{ step.custom_description }}{% else %}{{ step.get_description_display }}{% endif %}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% if not goal.step_set.exists %}
+      <p>No steps taken yet. Time to hit the trail!</p>
+    {% endif %}
+  </section>
+</div>
+
+{% endblock %}
+    {% comment %} <h3>Add a Step</h3>
+    <form action="{% url 'add-step' goal.id %}" method="post" class="subsection-content" autocomplete="off">
+        {% csrf_token %}
+        <label for="id_description">Select an Action</label>
+        {{ step_form.description }}
+
+        <label for="id_custom_description">Or type your own:</label>
+        {{ step_form.custom_description }}
+
+        <button type="submit" class="btn submit">Add Step</button>
+    </form> {% endcomment %}
+
 {% comment %} 
 <div class="steps-milestones-container">
   <section class="steps">
@@ -141,4 +179,4 @@
   </section>
 </div> {% endcomment %}
 
-{% endblock %}
+{% comment %} {% endblock %} {% endcomment %}

@@ -1,24 +1,12 @@
-/* .goal-container {
-  padding: 35px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-} */
-
-/* .goal-img { */
-  /* width: 75%; */
-  /* max-width: 350px; */
-  /* z-index: 2; Ensure the text is above the overlay */
-  /* position: relative; 
-} */
-
+p {
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
+}
 .goal-container {
   display: flex;
   align-items: center; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
-  padding: 35px 30px;
+  padding: 20px 10px 10px 35px;
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
   z-index: 2; /* Ensure the text is above the overlay */
   position: relative;
@@ -29,7 +17,7 @@
   flex: 1;
   width: 100%; /* Full width of its container */
   max-width: 350px; /* Set maximum width */
-  margin: 0 auto 25px; /* Center the image and add bottom margin */
+  margin: 0 25px; /* Center the image and add bottom margin */
 }
 
 .goal-details {
@@ -110,6 +98,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  margin: 20px 20px;
 }
 
 .subsection-content {
@@ -188,6 +177,8 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .subsection-title img {
@@ -199,64 +190,91 @@
   margin-left: 16px;
 }
 
+p {
+  font-size: 16px;
+  margin: 20px;
+}
+
 .steps h2,
 .milestones h2 {
   font-size: 3.2rem;
   margin: 0;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .steps h3,
 .milestones h3 {
   font-size: var(--font-xl);
-  margin: 10px 0;
+  margin: 0;
+  padding: 8px 5px;
+
 }
 
 .subsection-content p,
 .subsection-content input,
 .subsection-content select {
   font-size: var(--font-l);
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .subsection-content input,
 .subsection-content select {
   margin-left: 5px;
   padding: 3px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .steps table {
   width: calc(100% - 16px);
   text-align: left;
   border-collapse: collapse;
-  margin: 0 8px;
+  margin: 0 10px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .steps td {
   padding: 8px 5px;
   font-size: var(--font-reg);
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .steps th {
   font-size: var(--font-l);
-  padding: 5px 5px 0;
-  border-bottom: rgb(36, 116, 248) solid 2px;
+  padding: 5px 10px 0;
+  border-bottom: rgb(169, 162, 112) solid 2px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .steps tr:nth-child(even) {
   background-color: #f3f3fd;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .milestone-container p {
   margin: 12px 0;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .milestone-container a {
   text-decoration: none;
   color: #111;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .milestone-container .btn {
   padding: 3px 10px;
   margin-left: 10px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 #file-input {
