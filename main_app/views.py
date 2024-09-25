@@ -31,6 +31,11 @@ def add_step(request, goal_id):
     new_step.goal_id = goal_id
     new_step.save()
     return redirect('goal-detail', goal_id=goal_id)
+  
+def assoc_milestone(request, goal_id, milestone_id):
+  # Note that you can pass a toy's id instead of the whole object
+  Goal.objects.get(id=goal_id).milestones.add(milestone_id)
+  return redirect('goal-detail', goal_id=goal_id)
 
 class GoalCreate(CreateView):
   model = Goal

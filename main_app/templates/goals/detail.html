@@ -112,97 +112,6 @@
     </div>
     <h3>Your Milestones</h3>
     <div class="subsection-content">
-    </div>
-  </section>
-</div>
-{% endblock %}
-
-
-    {% comment %} <h3>Add a Step</h3>
-    <form action="{% url 'add-step' goal.id %}" method="post" class="subsection-content" autocomplete="off">
-        {% csrf_token %}
-        <label for="id_description">Select an Action</label>
-        {{ step_form.description }}
-
-        <label for="id_custom_description">Or type your own:</label>
-        {{ step_form.custom_description }}
-
-        <button type="submit" class="btn submit">Add Step</button>
-    </form> {% endcomment %}
-
-{% comment %} 
-<div class="steps-milestones-container">
-  <section class="steps">
-    <div class="subsection-title">
-      <h2>Steps</h2>
-      <img 
-        src="{% static 'images/goal-steps.png' %}" 
-        alt="Goal step icons"
-      />
-    </div>
-    <h3>Add a Step</h3>
-    <form
-      action="{% url 'add-step' goal.id %}" 
-      method="post" 
-      class="subsection-content"
-      autocomplete="off"
-    >
-      {% csrf_token %}
-      {% if goal.completed_for_today %}
-        <p class="completed">{{goal.name}} has completed all their steps for today!</p>
-      {% else %}
-        <p class="incomplete">{{goal.name}} still has steps to complete!</p>
-      {% endif %}
-      {{ step_form.as_p }}
-      <button type="submit" class="btn submit">Add Step</button>
-    </form>
-    <h3>Past Steps</h3>
-    {% if goal.step_set.all.count %}
-      <table>
-        <thead>
-          <tr><th>Date</th><th>Action</th></tr>
-        </thead>
-        <tbody>
-          {% for step in goal.step_set.all %}
-            <tr>
-              <td>{{step.date}}</td>
-              <td>{{step.get_action_display}}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    {% else %}
-      <div class="subsection-content">
-        <p>{{goal.name}} has never completed any steps 😔</p>
-      </div>
-    {% endif %}
-  </section>
-
-  <section class="milestones">
-    <div class="subsection-title">
-      <h2>Milestones</h2>
-      <img src="{% static 'images/milestone.svg' %}" alt="Milestone icon" />
-    </div>
-    <h3>{{ goal.name }}'s Milestones</h3>
-    <div class="subsection-content">
-      {% if goal.milestones.count %}
-        {% for milestone in goal.milestones.all %}
-          <div class="milestone-container">
-            <div 
-              class="color-block"
-              style="background-color: {{ milestone.color }}"
-            ></div>
-            <a href="{% url 'milestone-detail' milestone.id %}">
-              <p>A {{ milestone.color }} {{ milestone.name }}</p>
-            </a>
-          </div>
-        {% endfor %}
-      {% else %}
-        <p class="no-milestones">{{goal.name}} doesn't have any milestones 😞</p>
-      {% endif %}
-    </div>
-    <h3>Available Milestones</h3>
-    <div class="subsection-content">
       {% if milestones.count %}
         {% for milestone in milestones.all %}
           <div class="milestone-container">
@@ -215,17 +124,17 @@
             </a>
             <form action="{% url 'assoc-milestone' goal.id milestone.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn submit">Assign Milestone</button>
-            </form>            
+              <button type="submit" class="btn submit"> ➕ Milestone</button>
+            </form>
           </div>
         {% endfor %}
       {% else %}
         <p class="all-milestones">
-          {{goal.name}} already has all the available milestones 🥳
+          You've crossed off all available milestones for {{goal.name}}! Well done!
         </p>
       {% endif %}
     </div>
   </section>
-</div> {% endcomment %}
+</div>
+{% endblock %}
 
-{% comment %} {% endblock %} {% endcomment %}
