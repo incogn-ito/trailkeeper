@@ -16,18 +16,18 @@ main > section {
 }
 
 .header-logo-container {
-    display: none;
+  display: none;
 }
 
 .logo-container {
-    z-index: 2;
-    position: relative; 
-    max-width: 100%;
+  z-index: 2;
+  position: relative; 
+  max-width: 100%;
 
 }
 
 .goal-container {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .goal-container img{
@@ -40,6 +40,8 @@ main > section {
   justify-content: center;
   align-items: center;
   width: 80%;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
 }
 
 .login h1 {

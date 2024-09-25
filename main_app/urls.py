@@ -4,7 +4,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-  path('', views.home, name='home'),
+  path('', views.Home.as_view(), name='home'),
   path('about/', views.about, name='about'),
   path('goals/', views.goal_index, name='goal-index'),
   path('goals/<int:goal_id>/', views.goal_detail, name='goal-detail'),
@@ -13,6 +13,7 @@ urlpatterns = [
   path('goals/<int:pk>/delete/', views.GoalDelete.as_view(), name='goal-delete'),
   path('goals/<int:goal_id>/add-step/', views.add_step, name='add-step'),
   path('goals/<int:goal_id>/assoc-milestone/<int:milestone_id>/', views.assoc_milestone, name='assoc-milestone'),
+  path('accounts/signup/', views.signup, name='signup'),
   path('milestones/create/', views.MilestoneCreate.as_view(), name='milestone-create'),
   path('milestones/<int:pk>/', views.MilestoneDetail.as_view(), name='milestone-detail'),
   path('milestones/', views.MilestoneList.as_view(), name='milestone-index'),
