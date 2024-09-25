@@ -70,20 +70,22 @@ from datetime import date
 
 # Define categories of actions that can be taken as steps
 ACTION_CHOICES = (
-    ('Research', 'Research'),
-    ('Plan', 'Plan'),
-    ('Start', 'Start'),
-    ('Execute', 'Execute'),
-    ('Review', 'Review'),
     ('Adjust', 'Adjust'),
     ('Collaborate', 'Collaborate'),
+    ('Execute', 'Execute'),
+    ('Plan', 'Plan'),
+    ('Practice', 'Practice'),
     ('Reflect', 'Reflect'),
+    ('Research', 'Research'),
+    ('Start', 'Start'),
+    ('Review', 'Review'),
+    ('Workout', 'Workout')
 )
 
 class Step(models.Model):
     date = models.DateField('Step Date', default=date.today)
     description = models.CharField(max_length=255, choices=ACTION_CHOICES, blank=True)
-    custom_description = models.CharField(max_length=255, blank=True, null=True)  # Optional custom field
+    custom_description = models.CharField(max_length=255, blank=True, null=True)  
     goal = models.ForeignKey('Goal', on_delete=models.CASCADE)
 
     def __str__(self):

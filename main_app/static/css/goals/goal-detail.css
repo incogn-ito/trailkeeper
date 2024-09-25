@@ -90,19 +90,30 @@ p {
 .steps-milestones-container {
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding: 20px; /* Adjust the padding to create spacing inside the box */
   align-items: center;
+  justify-content: center; /* Center the contents */
+  border: 2px solid var(--border-color); /* Add a border */
+  border-radius: var(--card-border-radius); /* Add rounded corners */
+  box-shadow: var(--card-box-shadow); /* Add shadow for a card effect */
+  width: 80%; /* Adjust the width of the box */
+  margin: 20px auto; /* Center the box horizontally and add margin to space it from the goal container */
+  background-color: var(--background-color); /* Optional: Add a background color */
+  z-index: 2;
+  position: relative;
 }
+
 
 .subsection-title {
   display: flex;
-  align-items: center;
+  align-items: left;
   margin-bottom: 12px;
-  margin: 20px 20px;
+  text-align: left; /* Center the subsection titles */
 }
 
 .subsection-content {
   margin: 0 8px;
+  text-align: left; /* Center the content inside subsections */
 }
 
 .milestone-container {
@@ -167,19 +178,13 @@ p {
 }
 
 .steps-milestones-container > section {
-  width: 80%;
-  min-width: 360px;
-  border: var(--borders);
-  border-radius: var(--card-border-radius);
-  padding: 10px;
-  box-shadow: var(--card-box-shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 20px;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
+  width: 100%; /* Ensure sections take up full width of the container */
+  padding: 10px; /* Adjust padding for better spacing */
+  margin-bottom: 20px; /* Add spacing between sections */
+  border: 1px solid var(--border-color-light); /* Optional: add border to sections for visual distinction */
+  border-radius: var(--card-border-radius); /* Add rounded corners to sections */
 }
+
 
 .subsection-title img {
   height: 42px;
@@ -270,9 +275,16 @@ p {
   position: relative; 
 }
 
-.milestone-container .btn {
+.milestone-container {
   padding: 3px 10px;
   margin-left: 10px;
+  z-index: 2; /* Ensure the text is above the overlay */
+  position: relative; 
+}
+
+.btn {
+  padding: 3px 10px;
+  /* margin-left: 10px; */
   z-index: 2; /* Ensure the text is above the overlay */
   position: relative; 
 }
@@ -303,6 +315,7 @@ p {
 
 @media only screen and (min-width: 1024px) {
   .steps-milestones-container {
-    padding: 0 40px;
+    padding: 30px 40px;
+    width: 60%; /* Further adjust width for larger screens */
   }
 }

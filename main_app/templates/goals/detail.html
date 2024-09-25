@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-{% comment %} <link 
+<link 
   href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
   rel="stylesheet" 
 />
@@ -10,12 +10,13 @@
 <script 
   src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
 >
-</script> {% endcomment %}
+</script> 
 <link 
   rel="stylesheet" 
   type="text/css" 
   href="{% static 'css/goals/goal-detail.css' %}"
 />
+<script defer src="{% static 'js/goal-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -42,12 +43,25 @@
   </div>  
 </section>
 
-<div class="step-milestone-container">
+<div class="steps-milestones-container">
   <section class="steps">
     <div class="subsection-title">
       <h2>Steps</h2>
+      {% comment %} <img src="{% static 'images/footprint.png' %}" alt="Footprint" /> {% endcomment %}
     </div>
-
+    <h3>Add a Step</h3>
+    <form
+      action="{% url 'add-step' goal.id %}"
+      method="post" 
+      class="subsection-content"
+			autocomplete="off"
+    >
+      {% csrf_token %}
+      {{ step_form.as_p }}
+      <button type="submit" class="btn submit">Add Step</button>
+    </form>
+    <h3>Past Steps</h3>
+    {% if goal.step_set.all.count %}
     <table>
       <thead>
         <tr><th>Date</th><th>Progress</th></tr>
@@ -61,14 +75,24 @@
         {% endfor %}
       </tbody>
     </table>
-
-    {% if not goal.step_set.exists %}
-      <p>No steps taken yet. Time to hit the trail!</p>
+    {% else %}
+    <div class="subsection-content">
+      <p>No steps taken towards your {{ goal.category}} goal.</p>
+      <p>Time to hit the trail!</p>
+    </div>
     {% endif %}
   </section>
-</div>
 
+  <section class="milestones">
+    <div class="subsection-title">
+      <h2>Milestones</h2>
+    </div>
+    <p>Milestone details go here...</p>
+  </section>
+</div>
 {% endblock %}
+
+
     {% comment %} <h3>Add a Step</h3>
     <form action="{% url 'add-step' goal.id %}" method="post" class="subsection-content" autocomplete="off">
         {% csrf_token %}

@@ -1,24 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Goal
-# from .forms import StepForm
-
-
-
-# class Goal:  # Note that parens are optional if not inheriting from another class
-#   def __init__(self, name, category, creature_type, target_date, description):
-#     self.name = name
-#     self.category = category
-#     self.creature_type = creature_type
-#     self.target_date = target_date
-#     self.description = description
-
-# goals = [
-#     Goal("Save $1,000", "Financial", "Squirrel", "2024-12-31", "Save $1,000 by the end of the year for an emergency fund."),
-#     Goal("Complete a Marathon", "Fitness", "Fox", "2024-10-15", "Train consistently and complete the marathon in October."),
-#     Goal("Learn French", "Personal Development", "Owl", "2025-06-01", "Become conversational in French by taking weekly lessons and practicing daily."),
-#     Goal("Launch a Productivity App", "Productivity", "Beaver", "2024-09-30", "Complete and launch a productivity app to help users manage their tasks efficiently.")
-# ]
+from .forms import StepForm
 
 def home(request):
   return render(request, 'home.html')
@@ -32,15 +15,16 @@ def goal_index(request):
 
 def goal_detail(request, goal_id):
     goal = Goal.objects.get(id=goal_id)
-    return render(request, 'goals/detail.html', { 'goal': goal })
+    step_form = StepForm()
+    return render(request, 'goals/detail.html', { 'goal': goal, 'step_form': step_form })
 
-# def add_step(request, goal_id):
-#   form = StepForm(request.POST)
-#   if form.is_valid():
-#     new_step = form.save(commit=False)
-#     new_step.goal = goal
-#     new_step.save()
-#     return redirect('goal-detail', goal_id=goal.id)
+def add_step(request, goal_id):
+  form = StepForm(request.POST)
+  if form.is_valid():
+    new_step = form.save(commit=False)
+    new_step.goal_id = goal_id
+    new_step.save()
+    return redirect('goal-detail', goal_id=goal_id)
 
 class GoalCreate(CreateView):
   model = Goal
@@ -54,3 +38,4 @@ class GoalUpdate(UpdateView):
 class GoalDelete(DeleteView):
   model = Goal
   success_url = '/goals/'
+
