@@ -65,9 +65,6 @@ class Goal(models.Model):
     # def __str__(self):
     #     return f"{self.name} - {self.get_creature_type_display()}"
 
-from django.db import models
-from datetime import date
-
 # Define categories of actions that can be taken as steps
 ACTION_CHOICES = (
     ('Adjust', 'Adjust'),
