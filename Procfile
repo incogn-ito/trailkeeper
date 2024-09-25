@@ -1,1 +1,1 @@
-WSGI_APPLICATION = 'trailkeeper.wsgi.application'
+web: gunicorn trailkeeper.wsgi
