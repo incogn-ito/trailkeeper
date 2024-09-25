@@ -1,5 +1,5 @@
 # Trail Keeper
-<img src = 'main_app/static/images/screenshot-3.png' alt = 'Index page' width = 100%>
+<img src = 'main_app/static/images/screenshot-5.png' alt = 'Home page' width = 100%>
 
 # Welcome to Trail Keeper!
 In the same way a trail must be followed, goals are achieved through consistent choices—one step, one decision, one day at a time. In a world that often demands instant results and promotes an 'all or nothing' mentality, I have to remind myself that progress is built steadily, not in leaps, but in the quiet persistence of each small action.
@@ -8,7 +8,9 @@ Trail Keeper is a goal-setting app designed to help you navigate your personal j
 
 Whether you are aiming for personal development, fitness, or career milestones, Trail Keeper offers a serene, nature-inspired interface where you can plot your course, mark your progress, and celebrate your achievements. Stay motivated, stay focused, and let Trail Keeper guide you toward the summit of your goals.
 
-### Key Features:
+<img src = 'main_app/static/images/screenshot-4.png' alt = 'Index page' width = 100%>
+
+## Key Features
 * Find a new trail to keep your GOALS in check and watch as your daily STEPS and MILESTONES stack up! 
 * Sign up and upload a photo for each goal to keep all your future accomplishments organized.
 * Create new goals and choose your category and target date for your financial, personal development, fitness and productivity aims.
