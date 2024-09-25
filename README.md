@@ -1,5 +1,5 @@
 # Trail Keeper
-<img src = 'main_app/static/images/index.png' alt = 'Index page' width = 100%>
+<img src = 'main_app/static/images/screenshot-3.png' alt = 'Index page' width = 100%>
 
 # Welcome to Trail Keeper!
 It’s impossible to complete a hike in a single step. In the same way a trail must be followed, goals are achieved through consistent choices—one step, one decision, one day at a time. In a world that often demands instant results and promotes an 'all or nothing' mentality, I have to remind myself that progress is built steadily, not in leaps, but in the quiet persistence of each small action.
@@ -35,11 +35,9 @@ Whether you are aiming for personal development, fitness, or career milestones, 
 ![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)  ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
 ## Attributions
-<!-- * [Pixabay](https://pixabay.com) - Images -->
-* [Hero Patterns](https://heropatterns.com) - Background
-* [Chatgpt](https://chatgpt.com/) - Logo, Background
+* [Chatgpt](https://chatgpt.com/) - Background, Logo
 
 # Next Steps
-* Add search form functionality to allow users to filter through goals in the app.
-* Give users the ability to heart their top goal
+* Add photo upload functionality and default images linked to goal categories
+* Give users the ability to heart their top goal.
 * Use an API to allow users to search for suggested goals in a particular category.
