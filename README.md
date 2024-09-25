@@ -17,7 +17,11 @@ Whether you are aiming for personal development, fitness, or career milestones, 
 * Add 3 daily steps each day to clear the path towards accomplishment!
 * As you crush daily trail-keep steps, users can log milestones along the way to chart our progress along the path towards prospective achievements.
 
-# [COMING SOON - Open Trail Keeper](https://github.com/incogn-ito/trailkeeper.git)
+## About the creator [Ito Aghayere](https://github.com/Incogn-ito) 
+
+## Click below to open the App
+[![Trail Keeper link to app](./main_app/static/images/typeface.png)](https://trailkeeper-b7edb120d797.herokuapp.com/)
+
 
 ## Planning 
 * [Trello](https://trello.com/b/2DVVKhea/trail-keeper)
