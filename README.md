@@ -15,7 +15,7 @@ Whether you are aiming for personal development, fitness, or career milestones, 
 * Sign up and upload a photo for each goal to keep all your future accomplishments organized.
 * Create new goals and choose your category and target date for your financial, personal development, fitness and productivity aims.
 * Add 3 daily steps each day to clear the path towards accomplishment!
-* As you crush daily trail-keep steps, log milestones along the way to chart your progress along the trail towards your prospective achievements.
+* As you crush daily trail-keep steps, users can log milestones along the way to chart our progress along the path towards prospective achievements.
 
 # [COMING SOON - Open Trail Keeper](https://github.com/incogn-ito/trailkeeper.git)
 
