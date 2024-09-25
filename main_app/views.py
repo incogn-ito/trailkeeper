@@ -15,9 +15,14 @@ def goal_index(request):
   return render(request, 'goals/index.html', { 'goals': goals })
 
 def goal_detail(request, goal_id):
-    goal = Goal.objects.get(id=goal_id)
-    step_form = StepForm()
-    return render(request, 'goals/detail.html', { 'goal': goal, 'step_form': step_form })
+  goal = Goal.objects.get(id=goal_id)
+  # Get the toys the cat doesn't have
+  milestones_goal_doesnt_have = Milestone.objects.exclude(id__in = goal.milestones.all().values_list('id'))
+  step_form = StepForm()
+  return render(request, 'goals/detail.html', {
+    # Add the toys to be displayed
+    'goal': goal, 'step_form': step_form, 'milestones': milestones_goal_doesnt_have
+  })
 
 def add_step(request, goal_id):
   form = StepForm(request.POST)

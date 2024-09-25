@@ -56,6 +56,7 @@ class Goal(models.Model):
     creature_type = models.CharField(max_length=10, choices=CREATURE_CHOICES)
     target_date = models.DateField()
     description = models.TextField(max_length=250, blank=True)
+    milestones = models.ManyToManyField(Milestone)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):

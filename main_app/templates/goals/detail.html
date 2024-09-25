@@ -92,7 +92,27 @@
     <div class="subsection-title">
       <h2>Milestones</h2>
     </div>
-    <p>Milestone details go here...</p>
+    <h3>{{ goal.name }} Milestones</h3>
+    <div class="subsection-content">
+      {% if goal.milestones.count %}
+        {% for milestone in goal.milestones.all %}
+          <div class="milestone-container">
+            <div 
+              class="color-block"
+              style="background-color: {{ milestone.color }}"
+            ></div>
+            <a href="{% url 'milestone-detail' milestone.id %}">
+              <p>A {{ milestone.color }} {{ milestone.name }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-milestones">This goal doesn't yet have any milestones!</p>
+      {% endif %}
+    </div>
+    <h3>Your Milestones</h3>
+    <div class="subsection-content">
+    </div>
   </section>
 </div>
 {% endblock %}
