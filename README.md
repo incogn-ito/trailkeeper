@@ -2,7 +2,7 @@
 <img src = 'main_app/static/images/screenshot-3.png' alt = 'Index page' width = 100%>
 
 # Welcome to Trail Keeper!
-It’s impossible to complete a hike in a single step. In the same way a trail must be followed, goals are achieved through consistent choices—one step, one decision, one day at a time. In a world that often demands instant results and promotes an 'all or nothing' mentality, I have to remind myself that progress is built steadily, not in leaps, but in the quiet persistence of each small action.
+In the same way a trail must be followed, goals are achieved through consistent choices—one step, one decision, one day at a time. In a world that often demands instant results and promotes an 'all or nothing' mentality, I have to remind myself that progress is built steadily, not in leaps, but in the quiet persistence of each small action.
 
 Trail Keeper is a goal-setting app designed to help you navigate your personal journey toward success. Much like following a path through the forest, Trail Keeper keeps you on track as you break down your goals into manageable steps. 
 
