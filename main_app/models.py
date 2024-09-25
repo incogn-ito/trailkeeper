@@ -19,16 +19,17 @@ CREATURE_CHOICES = (
 )
 
 ACTION_CHOICES = (
-    ('Research', 'Research'),
-    ('Plan', 'Plan'),
-    ('Start', 'Start'),
-    ('Execute', 'Execute'),
-    ('Review', 'Review'),
     ('Adjust', 'Adjust'),
     ('Collaborate', 'Collaborate'),
+    ('Execute', 'Execute'),
+    ('Plan', 'Plan'),
+    ('Practice', 'Practice'),
     ('Reflect', 'Reflect'),
+    ('Research', 'Research'),
+    ('Start', 'Start'),
+    ('Review', 'Review'),
+    ('Workout', 'Workout')
 )
-
 
 # Define default images for each category
 # DEFAULT_IMAGES = {
@@ -52,6 +53,9 @@ class Goal(models.Model):
     
     def get_absolute_url(self):
         return reverse('goal-detail', kwargs={'goal_id': self.id})
+    
+    def step_for_today(self):
+        return self.step_set.filter(date=date.today()).count() >= 1
 
     # Here is where you specify the upload_to argument
     # image = models.ImageField(upload_to='goal_images/', blank=True, null=True)
@@ -64,20 +68,6 @@ class Goal(models.Model):
 
     # def __str__(self):
     #     return f"{self.name} - {self.get_creature_type_display()}"
-
-# Define categories of actions that can be taken as steps
-ACTION_CHOICES = (
-    ('Adjust', 'Adjust'),
-    ('Collaborate', 'Collaborate'),
-    ('Execute', 'Execute'),
-    ('Plan', 'Plan'),
-    ('Practice', 'Practice'),
-    ('Reflect', 'Reflect'),
-    ('Research', 'Research'),
-    ('Start', 'Start'),
-    ('Review', 'Review'),
-    ('Workout', 'Workout')
-)
 
 class Step(models.Model):
     date = models.DateField('Step Date', default=date.today)

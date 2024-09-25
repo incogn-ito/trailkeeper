@@ -57,6 +57,11 @@
 			autocomplete="off"
     >
       {% csrf_token %}
+       {% if goal.step_for_today %}
+        <p class="fed">You're one step closer to your {{goal.category}} goal!</p>
+      {% else %}
+        <p class="unfed">You're missing a step towards your {{goal.category}} goal today...  </p>
+      {% endif %}
       {{ step_form.as_p }}
       <button type="submit" class="btn submit">Add Step</button>
     </form>
