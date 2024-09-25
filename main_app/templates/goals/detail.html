@@ -70,7 +70,7 @@
         {% for step in goal.step_set.all %}
           <tr>
             <td>{{ step.date }}</td>
-            <td>{% if step.custom_description %}{{ step.custom_description }}{% else %}{{ step.get_description_display }}{% endif %}</td>
+            <td>{% if step.description %}{{ step.description }}{% else %}{{ step.get_path_display }}{% endif %}</td>
           </tr>
         {% endfor %}
       </tbody>

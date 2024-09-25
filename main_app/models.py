@@ -84,13 +84,13 @@ ACTION_CHOICES = (
 
 class Step(models.Model):
     date = models.DateField('Step Date', default=date.today)
-    description = models.CharField(max_length=255, choices=ACTION_CHOICES, blank=True)
-    custom_description = models.CharField(max_length=255, blank=True, null=True)  
+    path = models.CharField(max_length=255, choices=ACTION_CHOICES, blank=True)
+    description = models.CharField(max_length=255, blank=True, null=True)  
     goal = models.ForeignKey('Goal', on_delete=models.CASCADE)
 
     def __str__(self):
         # Show either predefined action or custom description
-        return self.custom_description or self.get_description_display()
+        return self.description or self.get_category_display()
     
     class Meta:
         ordering = ['-date']
