@@ -40,6 +40,6 @@ Whether you are aiming for personal development, fitness, or career milestones, 
 * [Chatgpt](https://chatgpt.com/) - Background, Logo
 
 # Next Steps
-* Add photo upload functionality and default images linked to goal categories
+* Add photo upload functionality and default images linked to goal categories.
 * Give users the ability to heart their top goal.
 * Use an API to allow users to search for suggested goals in a particular category.
