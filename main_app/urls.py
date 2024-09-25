@@ -12,6 +12,9 @@ urlpatterns = [
   path('goals/<int:pk>/update/', views.GoalUpdate.as_view(), name='goal-update'),
   path('goals/<int:pk>/delete/', views.GoalDelete.as_view(), name='goal-delete'),
   path('goals/<int:goal_id>/add-step/', views.add_step, name='add-step'),
+  path('milestones/create/', views.MilestoneCreate.as_view(), name='milestone-create'),
+  path('milestones/<int:pk>/', views.MilestoneDetail.as_view(), name='milestone-detail'),
+  path('milestones/', views.MilestoneList.as_view(), name='milestone-index'),
 ]
 
 # if settings.DEBUG:

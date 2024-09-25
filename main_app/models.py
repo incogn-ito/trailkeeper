@@ -39,6 +39,16 @@ ACTION_CHOICES = (
 #     'Productivity': 'default_images/productivity_default.jpg',
 # }
 
+class Milestone(models.Model):
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('milestone-detail', kwargs={'pk': self.id})
+
 class Goal(models.Model):
     # Primary key is automatically added as 'id' by Django
     name = models.CharField(max_length=100)

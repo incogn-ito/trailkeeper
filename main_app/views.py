@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Goal
+from django.views.generic import ListView, DetailView
+from .models import Goal, Milestone
 from .forms import StepForm
 
 def home(request):
@@ -39,3 +40,12 @@ class GoalDelete(DeleteView):
   model = Goal
   success_url = '/goals/'
 
+class MilestoneCreate(CreateView):
+  model = Milestone
+  fields = '__all__'
+
+class MilestoneList(ListView):
+  model = Milestone
+
+class MilestoneDetail(DetailView):
+  model = Milestone

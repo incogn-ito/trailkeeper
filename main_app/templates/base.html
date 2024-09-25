@@ -30,8 +30,10 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/goals">All Goals</a></li>
+        <li><a href="{% url 'goal-index' %}">Goals</a></li>
+        <li><a href="{% url 'milestone-index' %}">Milestones</a></li>
         <li><a href="{% url 'goal-create' %}">Add Goal</a></li>
+        <li><a href="{% url 'milestone-create' %}">Add Milestone</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
