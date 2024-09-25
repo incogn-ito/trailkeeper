@@ -49,3 +49,11 @@ class MilestoneList(ListView):
 
 class MilestoneDetail(DetailView):
   model = Milestone
+
+class MilestoneUpdate(UpdateView):
+  model = Milestone
+  fields = ['name', 'color']
+
+class MilestoneDelete(DeleteView):
+  model = Milestone
+  success_url = '/milestones/'
