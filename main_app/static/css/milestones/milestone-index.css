@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    z-index: 2; /* Ensure the text is above the overlay */
+    z-index: 2; 
     position: relative; 
   }
   

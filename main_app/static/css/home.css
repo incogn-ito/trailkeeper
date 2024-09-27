@@ -40,7 +40,7 @@ main > section {
   justify-content: center;
   align-items: center;
   width: 80%;
-  z-index: 2; /* Ensure the text is above the overlay */
+  z-index: 2; 
   position: relative; 
 }
 

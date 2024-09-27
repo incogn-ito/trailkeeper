@@ -149,6 +149,7 @@ LOGIN_REDIRECT_URL = 'goal-index'
 
 LOGOUT_REDIRECT_URL = 'home'
 
+# Future ICEBOX - Add code for image upload here.
 # Media files (user-uploaded content)
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

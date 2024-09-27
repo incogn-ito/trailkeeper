@@ -21,5 +21,6 @@ urlpatterns = [
   path('milestones/<int:pk>/delete/', views.MilestoneDelete.as_view(), name='milestone-delete'),
 ]
 
+# Future ICEBOX - Add code for image upload here.
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

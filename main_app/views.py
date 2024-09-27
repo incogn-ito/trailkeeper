@@ -23,11 +23,9 @@ def goal_index(request):
 @login_required
 def goal_detail(request, goal_id):
   goal = Goal.objects.get(id=goal_id)
-  # Get the milestones the goal doesn't have
   milestones_goal_doesnt_have = Milestone.objects.exclude(id__in = goal.milestones.all().values_list('id'))
   step_form = StepForm()
   return render(request, 'goals/detail.html', {
-    # Add the toys to be displayed
     'goal': goal, 'step_form': step_form, 'milestones': milestones_goal_doesnt_have
   })
 
@@ -42,29 +40,22 @@ def add_step(request, goal_id):
   
 @login_required
 def assoc_milestone(request, goal_id, milestone_id):
-  # Note that you can pass a toy's id instead of the whole object
   Goal.objects.get(id=goal_id).milestones.add(milestone_id)
   return redirect('goal-detail', goal_id=goal_id)
 
 def signup(request):
   error_message = ''
   if request.method == 'POST':
-    # This is how to create a 'user' form object
-    # that includes the data from the browser
     form = UserCreationForm(request.POST)
     if form.is_valid():
-      # This will add the user to the database
       user = form.save()
-      # This is how we log a user in
       login(request, user)
       return redirect('goal-index')
     else:
       error_message = 'Invalid sign up - try again'
-  # A bad POST or a GET request, so render signup.html with an empty form
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
-  # Same as: return render(request, 'signup.html', {'form': form, 'error_message': error_message})
 
 class Home(LoginView):
   template_name = 'home.html'
