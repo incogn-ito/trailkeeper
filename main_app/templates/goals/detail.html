@@ -31,7 +31,8 @@
   <div class="goal-details">
     <h1>{{ goal.name }}</h1>
     {% if goal.target_date %}
-      <h2>{{ goal.category }} goal to complete by {{ goal.target_date }}.</h2>
+      <h2>{{ goal.category }} goal to complete by: </h2>
+      <h2>{{ goal.target_date }}</h2>
     {% else %}
       <h2>An ongoing {{ goal.category }} goal.</h2>
     {% endif %}
@@ -47,7 +48,6 @@
   <section class="steps">
     <div class="subsection-title">
       <h2>Steps</h2>
-      {% comment %} <img src="{% static 'images/footprint.png' %}" alt="Footprint" /> {% endcomment %}
     </div>
     <h3>Add a Step</h3>
     <form
@@ -58,9 +58,9 @@
     >
       {% csrf_token %}
        {% if goal.step_for_today %}
-        <p class="fed">You're one step closer to your {{goal.category}} goal!</p>
+        <p class="stepped">You're one step closer to your {{goal.category}} goal.</p>
       {% else %}
-        <p class="unfed">You're missing a step towards your {{goal.category}} goal today...  </p>
+        <p class="unstepped">You're missing a step towards your {{goal.category}} goal today.  </p>
       {% endif %}
       {{ step_form.as_p }}
       <button type="submit" class="btn submit">Add Step</button>
@@ -82,7 +82,7 @@
     </table>
     {% else %}
     <div class="subsection-content">
-      <p>You have not yet logged any steps towards this {{ goal.category}} goal.</p>
+      <p class="unstepped">You haven't logged any steps towards this goal.</p>
       <h3>Time to hit the trail! 🌱</h3>
     </div>
     {% endif %}
@@ -96,7 +96,7 @@
     <div class="subsection-content">
       {% if goal.milestones.count %}
         {% for milestone in goal.milestones.all %}
-          <div class="milestone-container">
+          <div class="milestones-container">
             <div 
               class="color-block"
               style="background-color: {{ milestone.color }}"
@@ -107,14 +107,14 @@
           </div>
         {% endfor %}
       {% else %}
-        <p class="no-milestones">This goal doesn't yet have any milestones!</p>
+        <p class="no-milestones">This goal doesn't have any milestones yet.</p>
       {% endif %}
     </div>
     <h3>Your Milestones</h3>
     <div class="subsection-content">
       {% if milestones.count %}
         {% for milestone in milestones.all %}
-          <div class="milestone-container">
+          <div class="milestones-container">
             <div 
               class="color-block"
               style="background-color: {{ milestone.color }}"
