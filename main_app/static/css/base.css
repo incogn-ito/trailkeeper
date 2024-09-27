@@ -55,7 +55,7 @@ body {
 /* Adding a layer over the background */
 body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,8 +95,7 @@ header {
     background: rgba(61, 202, 200, 0.384);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
-    /* max-width: 80%;   */
-    
+    min-width:fit-content;
   }
   
   ul {
@@ -165,7 +164,7 @@ header {
     display: flex;
     align-items: center;
     margin: 0 40px 0 20px;
-    z-index: 2; /* Ensure the text is above the overlay */
+    z-index: 2;
     position: relative; 
   }
   
@@ -224,6 +223,21 @@ header {
   
   .page-header img:first-of-type {
     margin-left: 20px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    nav {
+      margin-left: 0px;
+      padding: 2px 0;
+      font-size: 0.8rem;
+      display: flex;
+    }
+  
+    nav a {
+      padding: 0 auto;
+      font-size: 0.8rem; 
+      gap: 1px;
+    }
   }
   
   
@@ -335,7 +349,7 @@ header {
       }
           
       nav {
-        background: rgba(92, 216, 244, 0.6);
+        background: rgba(61, 202, 200, 0.384);
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
       }

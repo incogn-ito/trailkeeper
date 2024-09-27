@@ -1,72 +1,32 @@
-p {
-  z-index: 2; /* Ensure the text is above the overlay */
+.goal-container {
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; 
   position: relative; 
 }
-.goal-container {
+
+.goal-img {
+  width: 75%;
+  max-width: 400px;
+  min-width: 200px;
+  height: auto; 
+  margin-bottom: 20px;
+  overflow: hidden; 
   display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  padding: 20px 10px 10px 35px;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative;
-  text-align: center; /* Center text for smaller screens */
+  justify-content: center;
+  align-items: center;
+  z-index: 2; 
+  position: relative; 
 }
 
 .goal-img img {
-  flex: 1;
-  width: 100%; /* Full width of its container */
-  max-width: 350px; /* Set maximum width */
-  margin: 0 25px; /* Center the image and add bottom margin */
-}
-
-.goal-details {
-  flex: 2; /* Take up 2 portions of the available space */
-  width: 100%; /* Full width for smaller screens */
-  padding-left: 0; /* Remove padding for smaller screens */
-  max-width: 600px; /* Set a maximum width for better alignment */
-  margin: 0 auto; /* Center goal-details container */
-}
-
-.goal-actions {
-  margin-top: 20px;
-}
-
-@media only screen and (min-width: 768px) {
-  .goal-container {
-    flex-direction: row; /* Arrange items side by side on larger screens */
-    align-items: flex-start; /* Align items to the top for better structure */
-    justify-content: center; /* Still center items horizontally */
-    text-align: left; /* Align text to the left for better readability */
-  }
-
-  .goal-img img {
-    width: 80%; /* Slightly reduce image width */
-    max-width: 300px; /* Adjust the maximum width */
-    margin-right: 25px; /* Add right margin between image and details */
-    margin-bottom: 0; /* Remove bottom margin */
-  }
-
-  .goal-details {
-    width: 70%; /* Take up more width */
-    padding-left: 20px; /* Add left padding for spacing */
-    margin: 0; /* Remove margin for better alignment */
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .goal-container {
-    padding: 0 40px;
-  }
-
-  .goal-img img {
-    width: 100%; /* Adjust width for larger screens */
-    max-width: 400px; /* Increase max width for larger screens */
-  }
-
-  .goal-details {
-    width: 60%; /* Adjust width for larger screens */
-  }
+  width: 100%; 
+  height: auto;
+  object-fit: cover; 
+  border-radius: var(--card-border-radius); 
 }
 
 .usr-img {
@@ -74,49 +34,34 @@ p {
   border-radius: var(--card-border-radius);
 }
 
-/* .goal-details {
+.goal-details {
   width: 98%;
-  z-index: 2; 
-  position: relative; 
 }
-*/
 
 .goal-actions {
   margin-top: 20px;
-  z-index: 2; 
-  position: relative; 
 }
 
 .steps-milestones-container {
   display: flex;
   flex-direction: column;
-  padding: 20px; /* Adjust the padding to create spacing inside the box */
+  padding-bottom: 20px;
   align-items: center;
-  justify-content: center; /* Center the contents */
-  border: 2px solid var(--border-color); /* Add a border */
-  border-radius: var(--card-border-radius); /* Add rounded corners */
-  box-shadow: var(--card-box-shadow); /* Add shadow for a card effect */
-  width: 80%; /* Adjust the width of the box */
-  margin: 20px auto; /* Center the box horizontally and add margin to space it from the goal container */
-  background-color: var(--background-color); /* Optional: Add a background color */
-  z-index: 2;
-  position: relative;
+  z-index: 2; 
+  position: relative; 
 }
-
 
 .subsection-title {
   display: flex;
-  align-items: left;
+  align-items: center;
   margin-bottom: 12px;
-  text-align: left; /* Center the subsection titles */
 }
 
 .subsection-content {
   margin: 0 8px;
-  text-align: left; /* Center the content inside subsections */
 }
 
-.milestone-container {
+.milestones-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -129,20 +74,20 @@ p {
   margin-right: 10px;
 }
 
-.unfed,
-.fed,
+.unstepped,
+.stepped,
 .no-milestones,
 .all-milestones {
   margin: 0;
   font-weight: bold;
 }
 
-.unfed,
+.unstepped,
 .no-milestones {
   color: var(--danger);
 }
 
-.fed,
+.stepped,
 .all-milestones {
   color: var(--submit);
 }
@@ -150,8 +95,6 @@ p {
 .goal-details h1 {
   font-size: var(--font-xxl);
   margin: 15px 0 3px;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .goal-details h2 {
@@ -159,32 +102,30 @@ p {
   margin: 0 0 10px;
   margin-top: 0;
   margin-bottom: 10px;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .goal-details h3 {
   margin: 20px 0 10px;
   font-size: var(--font-l);
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .goal-details p {
   font-size: var(--font-reg);
   margin: 5px 0;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .steps-milestones-container > section {
-  width: 100%; /* Ensure sections take up full width of the container */
-  padding: 10px; /* Adjust padding for better spacing */
-  margin-bottom: 20px; /* Add spacing between sections */
-  border: 1px solid var(--border-color-light); /* Optional: add border to sections for visual distinction */
-  border-radius: var(--card-border-radius); /* Add rounded corners to sections */
+  width: 80%;
+  min-width: 360px;
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  padding: 10px;
+  box-shadow: var(--card-box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
 }
-
 
 .subsection-title img {
   height: 42px;
@@ -195,98 +136,64 @@ p {
   margin-left: 16px;
 }
 
-p {
-  font-size: 16px;
-  margin: 20px;
-}
-
 .steps h2,
 .milestones h2 {
   font-size: 3.2rem;
   margin: 0;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .steps h3,
 .milestones h3 {
   font-size: var(--font-xl);
-  margin: 0;
-  padding: 8px 5px;
-
+  margin: 10px 0;
 }
 
 .subsection-content p,
 .subsection-content input,
 .subsection-content select {
   font-size: var(--font-l);
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .subsection-content input,
 .subsection-content select {
   margin-left: 5px;
   padding: 3px;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .steps table {
   width: calc(100% - 16px);
   text-align: left;
   border-collapse: collapse;
-  margin: 0 10px;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
+  margin: 0 8px;
 }
 
 .steps td {
   padding: 8px 5px;
   font-size: var(--font-reg);
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 .steps th {
   font-size: var(--font-l);
-  padding: 5px 10px 0;
-  border-bottom: rgb(169, 162, 112) solid 2px;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
+  padding: 5px 5px 0;
+  border-bottom: rgb(36, 116, 248) solid 2px;
 }
 
 .steps tr:nth-child(even) {
   background-color: #f3f3fd;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
-.milestone-container p {
+.milestones-container p {
   margin: 12px 0;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
-.milestone-container a {
+.milestones-container a {
   text-decoration: none;
   color: #111;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
-.milestone-container {
+.milestones-container .btn {
   padding: 3px 10px;
   margin-left: 10px;
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
-}
-
-.btn {
-  padding: 3px 10px;
-  /* margin-left: 10px; */
-  z-index: 2; /* Ensure the text is above the overlay */
-  position: relative; 
 }
 
 #file-input {
@@ -300,23 +207,43 @@ p {
   margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 462px) {
+
+.goal-actions {
+  padding: 3px 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  } 
+}
 
 @media only screen and (min-width: 768px) {
+  .goal-container {
+      padding: 35px 30px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: start;
+  }
+
+  .goal-img {
+      width: 25%;
+      max-width: 250px;
+      margin-right: 25px;
+  }
 
   .steps-milestones-container {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
   }
 
   .steps-milestones-container > section {
-    width: 45%;
+      width: 45%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .steps-milestones-container {
-    padding: 30px 40px;
-    width: 60%; /* Further adjust width for larger screens */
+      padding: 0 40px;
   }
 }
