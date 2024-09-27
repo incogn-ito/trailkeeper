@@ -30,7 +30,7 @@ ACTION_CHOICES = (
     ('Review', 'Review'),
     ('Workout', 'Workout')
 )
-
+ # Future ICEBOX - Add code for image default categories here
 # Define default images for each category
 # DEFAULT_IMAGES = {
 #     'Financial': 'default_images/financial_default.jpg',
@@ -68,6 +68,7 @@ class Goal(models.Model):
     def step_for_today(self):
         return self.step_set.filter(date=date.today()).count() >= 1
 
+    # Future ICEBOX - Add code for image upload here.
     # Here is where you specify the upload_to argument
     # image = models.ImageField(upload_to='goal_images/', blank=True, null=True)
 
